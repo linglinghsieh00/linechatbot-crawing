@@ -11,6 +11,7 @@ linefoodbot 下建立一個 scraper.py ，放入程式碼
 from bs4 import BeautifulSoup
 from abc import ABC, abstractmethod
 import requests
+
  
  
 # 美食抽象類別
@@ -23,7 +24,8 @@ class Food(ABC):
     def scrape(self):
         pass
  
- 
+
+
 # 愛食記爬蟲
 class IFoodie(Food):
  
@@ -37,20 +39,27 @@ class IFoodie(Food):
         cards = soup.find_all(
             'div', {'class': 'jsx-3292609844 restaurant-info'}, limit=5)
  
-        content = ""
+        content = ''
+        
         for card in cards:
  
             title = card.find(  # 餐廳名稱
                 "a", {"class": "jsx-3292609844 title-text"}).getText()
+            
  
             stars = card.find(  # 餐廳評價
                 "div", {"class": "jsx-1207467136 text"}).getText()
  
             address = card.find(  # 餐廳地址
                 "div", {"class": "jsx-3292609844 address-row"}).getText()
- 
+           
+            
+
+            #img = soup.find( #餐廳圖片
+            #    'div', {'class': 'jsx-3292609844'})
+            #img = img.select_one("img").get('data-original')
+
  
             #將取得的餐廳名稱、評價及地址連結一起，並且指派給content變數
             content += f"{title} \n{stars}顆星 \n{address} \n\n"
- 
         return content
