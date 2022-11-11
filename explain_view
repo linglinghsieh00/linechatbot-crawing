@@ -1,0 +1,47 @@
+#def callback(request)
+
+@csrf_exempt
+def callback(request):
+    if request.method == 'POST':
+        signature = request.META['HTTP_X_LINE_SIGNATURE']
+        body = request.body.decode('utf-8')
+        try:
+            events = parser.parse(body, signature)  # 傳入的事件
+        except InvalidSignatureError:
+            return HttpResponseForbidden()
+        except LineBotApiError:
+            return HttpResponseBadRequest()
+
+#這段程式碼的意思就是指如果有事件傳入，就會進行到 callback 函式裡面的程式碼。
+
+#event
+#當有事件傳入，事件，指的是用戶傳送任何資料進來，就會開始測試迴圈內容。
+for event in events:
+    if isinstance(event, MessageEvent): 
+    
+'''
+Message Objects
+包含
+
+Text Message：一般的文字訊息。雖然還是有一些限制，但基本上就只是文字訊息而已。
+Sticker message：貼圖訊息
+Image message：照片訊息
+Video message：影片訊息（雖然這個功能目前還不成熟）
+Audio message：語音新聞
+Location message：傳送地點
+Imagemap message：傳送可點擊的影片訊息（可以點擊圖片跳轉至其他網頁）
+Template messages：一些按鈕選項
+Flex Message：更多客製化的訊息
+'''
+
+if isinstance(event, MessageEvent):  # 如果有訊息事件
+    line_bot_api.reply_message(  # 回復傳入的訊息文字
+        event.reply_token,
+        TextSendMessage(text=event.message.text)
+    )
+    
+'''
+我們回傳訊息就需要靠 line_bot_api.reply_message 還有 event 裡的 reply_token。
+TextSendMessage()，函式就是要回傳 text= 的文字。
+這裡回傳使用者傳入的訊息。
+'''
