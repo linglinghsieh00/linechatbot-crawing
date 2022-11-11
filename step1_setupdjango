@@ -1,0 +1,5 @@
+#pip install django
+
+#在 terminnal 打上下列文字，建立 Django 專案，以 mylinebot 為例
+django-admin startproject mylinebot  #在目前的資料夾下建立專案
+#執行完後，可以看到django-admin套件管理工具在Django專案中建立了一個基本的網站架構，包含了專案主程式資料夾(potrip)及manage.py檔
