@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('callback', views.callback)
+    path('', views.index, name = "Index")
 ]
 
 #將這個 APP 網址加到專案主程式中，所以在 mylinebot/urls.py 檔案中加入下面網址設定
