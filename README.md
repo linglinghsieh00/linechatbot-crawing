@@ -30,6 +30,7 @@ foodlinebot 是應用程式
 #新增憑證
 
 
+
 開啟專案，我們在 mylinebot/settings.py 裡增加上Basic Settings 裡的 Channel Secret 和 Messaging API 裡的 Channel access token 憑證
 INE_CHANNEL_ACCESS_TOKEN = 'Messaging API > Channel access token'
 LINE_CHANNEL_SECRET = 'Basic settings > Channel secret'
