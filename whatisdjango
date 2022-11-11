@@ -30,3 +30,12 @@ URL - Uniform Resource Locator，其實就是所謂的網址。
 然後你會在更新了他的工作敘述以後回傳給他一個「完成囉！」的訊息。之後 view 就會產生一個回應，Django 
 就會將回應送到使用者的瀏覽器上。
 '''
+
+'''
+__init__.py - 用來告訴Python，mylinebot是一個套件(Package)。
+asgi.py - 全名為Asynchronous Server Gateway Interface(非同步伺服器閘道介面)，是Django3.0新增加的檔案，用來提供非同步的功能。
+settings.py - Django專案的設定檔。
+urls.py - 定義Django專案中，各個應用程式(APP)的網址。
+wsgi.py - 全名為Web Server Gateway Interface(網站伺服器閘道介面)，提供Django網站和伺服器間的標準介面。
+manage.py - 用來管理整個Django專案，像是啟動本地端伺服器、連接資料庫及建立應用程式(APP)等。
+'''
