@@ -27,6 +27,8 @@ foodlinebot 是應用程式
 
 <img width="156" alt="截圖 2022-11-11 上午8 59 41" src="https://user-images.githubusercontent.com/102644365/201237728-70a9f3ed-5474-4677-82bb-81fe47214041.png">
 
+
+
 #新增憑證
 
 
@@ -42,6 +44,9 @@ LINE_CHANNEL_SECRET = 'Basic settings > Channel secret'
 
 
 #連線
+
+
+
 Chatbot 雖然已經把主要的邏輯運算都寫好了，但是還不能執行，因為我們還沒有進行連線
 在 def callback 中，會偵測到使用者是否有事件傳入（也就是有沒有使用者傳入訊息），之後就會透過 Python 迴圈去處理。
 1. 不過，為了要讓使用者能夠存取到Django中的應用程式，就需要定義它的網址，所以我們要建立一個新的檔案 foodlinebot/urls.py 並加入網址設定 (見 seturl 第二個程式)
@@ -50,6 +55,9 @@ Chatbot 雖然已經把主要的邏輯運算都寫好了，但是還不能執行
 
 
 #公開 APP 網址
+
+
+
 ngrok 是一個可以讓內網伺服器與外界溝通的一個服務。(將 http:// 變成 https:// ) 
 在官網下載 ngrok 後就可以在 terminal 上輸入
 ngrok authtoken <YOUR TOKEN>
@@ -71,6 +79,9 @@ localhost 是 https://localhost:8000
 
 
 #Line Developer Setting
+
+
+
 我們要做最後一步的設定。在 Messaging API > LINE Official Account features > Auto-reply messages > Edit
 
 <img width="657" alt="截圖 2022-11-11 上午10 21 37" src="https://user-images.githubusercontent.com/102644365/201248467-c80ff1cc-b5cb-42e0-b15b-2974b75beda3.png">
@@ -84,7 +95,12 @@ Auto-response：要記得把 Auto-response 關掉
 Webhooks：這個選項要記得打開(Enabled)。
 都設定完後，Line Channel 就能夠與 Line Bot APP 互相連結
 
+
+
 #執行！
+
+
+
 在 terminal 執行
 python manage.py runserver
 
@@ -96,5 +112,7 @@ python manage.py migrate
 
 <img width="675" alt="截圖 2022-11-11 上午10 25 41" src="https://user-images.githubusercontent.com/102644365/201249026-4430d991-5217-452b-9b15-2349afdba4cd.png">
 
+#建立專案寫的echo程式結果
 
+![IMG_1301](https://user-images.githubusercontent.com/102644365/201252326-08d494d0-4ab4-4e22-872f-ceae8baf4e6b.jpg)
 
