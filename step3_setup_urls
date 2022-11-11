@@ -1,0 +1,16 @@
+#django_chatbot/urls.py，加入以下網址設定
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('callback', views.callback)
+]
+
+#將這個 APP 網址加到專案主程式中，所以在 mylinebot/urls.py 檔案中加入下面網址設定
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('django_chatbot/', include('django_chatbot.urls')) #包含應用程式的網址
+]
