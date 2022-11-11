@@ -38,3 +38,11 @@ LINE_CHANNEL_SECRET = 'Basic settings > Channel secret'
 然後在同一個 settings.py 檔裡面的 INSTALLED_APPS 加上剛剛所建立的 Django 應用程式，新增APP名稱
 
 'foodlinebot.apps.FoodlinebotConfig',
+
+
+
+#連線
+Chatbot 雖然已經把主要的邏輯運算都寫好了，但是還不能執行，因為我們還沒有進行連線
+在 def callback 中，會偵測到使用者是否有事件傳入（也就是有沒有使用者傳入訊息），之後就會透過 Python 迴圈去處理。
+1. 不過，接下來還要設定 Line Bot APP 的連結網址，所以我們要建立一個新的檔案 foodlinebot/urls.py 並加入網址設定 (見 seturl 第二個程式)
+2. 之後我們要將這個 APP 網址加到專案主程式中，所以在 mylinebot/urls.py 檔案中加入網址設定（見 seturl 第二個程式）
