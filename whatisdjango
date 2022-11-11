@@ -1,0 +1,32 @@
+'''
+Django 是一個開放原始碼的 Web 應用框架，由 Python 寫成。採用了 MVT 的軟體設計模式，即模型（Model），視圖（View）和模板（Template）。
+
+Why do you need a framework?
+要瞭解 Django 之前，我們要先瞭解伺服器（server）的運作。
+也就是伺服器需要知道我們想要用怎樣的方式來提供網頁。
+
+大家在網路的領域裡多多少少應該都會聽過埠（Port）還有請求（Request）。
+
+我們把埠（Port）想像成信箱，會偵測寄來的信件，也就是請求（Request）。
+Web 伺服器會讀這些信（請求），然後網頁就會做出相對應的回應。
+
+Django 就是做這些工作！（幫我們產生相對應的回應）
+
+What happens when someone makes a request to your server?
+Server 收到請求，之後會透過 Django 判斷這個請求是甚麼，然後給出相對應的回應。
+這部分是由 Django 的 urlresolver 來處理。
+
+URL - Uniform Resource Locator，其實就是所謂的網址。
+
+如果 URL 符合某一個範例，Django 就送出這個請求相對應的函數們（在這裡稱為 view）
+
+再用信件去比喻：
+郵差會去確認每家的地址把信送給他們。
+如果地址對了就把信放進去。
+
+這就是 urlresolver 在做的事情。
+在 view funciton 中會做一些有趣的事情：
+我們會去資料庫找資料。如果使用者如果去要求更改某些資料，view 會檢查你是不是允許他可以做這件事，
+然後你會在更新了他的工作敘述以後回傳給他一個「完成囉！」的訊息。之後 view 就會產生一個回應，Django 
+就會將回應送到使用者的瀏覽器上。
+'''
