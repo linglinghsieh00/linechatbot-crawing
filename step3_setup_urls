@@ -1,12 +1,11 @@
-#django_chatbot/urls.py，加入以下網址設定
+#foodlinebot/urls.py，加入以下網址設定
 from django.urls import path
 from . import views
-
+ 
 urlpatterns = [
-    path('', views.index, name = "Index")
+    path('callback', views.callback)
 ]
-#第一個網址參數設定空白，是因為想要的網址為http://127.0.0.1:8000/posts/，如果想要的網址是http://127.0.0.1:8000/posts/overview
-path('overview', views.index, name = "Index")
+
 
 #將這個 APP 網址加到專案主程式中，所以在 mylinebot/urls.py 檔案中加入下面網址設定
 from django.contrib import admin
