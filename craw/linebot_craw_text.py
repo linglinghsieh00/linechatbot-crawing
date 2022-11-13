@@ -55,9 +55,7 @@ class IFoodie(Food):
            
             
 
-            #img = soup.find( #餐廳圖片
-            #    'div', {'class': 'jsx-3292609844'})
-            #img = img.select_one("img").get('data-original')
+            
 
  
             #將取得的餐廳名稱、評價及地址連結一起，並且指派給content變數
