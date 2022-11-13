@@ -15,4 +15,16 @@ LINE Bot判斷使用者發送「Hi」訊息時，在replay_message(回覆訊息)
 
 使用者選擇地區後，LINE Bot能夠接著回覆按鈕樣板訊息(Buttons template message)，讓使用者選擇想吃的美食分類，像是火鍋、早午餐或約會餐廳等，完成後再呼叫Python網頁爬蟲進行資料的取得
 
+
 ![IMG_1490](https://user-images.githubusercontent.com/102644365/201524692-a405257b-c04d-4cd6-8689-c1f261cfb6d3.PNG)
+
+
+#three_filter.py
+
+
+練習再增加一個步驟，讓使用者選擇平均消費價格，再利用Python網頁爬蟲取得餐廳資料。
+
+
+
+https://user-images.githubusercontent.com/102644365/201532378-593b8c61-c2b1-43e4-a79f-1f11d032e278.MP4
+
